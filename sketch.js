@@ -8,39 +8,12 @@ function setup() {
 	barwidth = width / total;
 	generate();
 }
-let stepBuble = 0;
 function draw() {
 	background(151)
 	for (let i = 0; i < bars.length; i++) {
 		const altura = bars[i];
-		if(stepBuble == i){
-			fill(255,0,0)
-		}else{
-			fill(0,255,0)
-		}
+		fill(0,255,0)
 		rect(i*barwidth,height,barwidth,-altura);
-	}
-	if(!sorted){
-		bubleSort(bars);
-		stepBuble++;
-	}
-	if(stepBuble == total){
-		sorted = true;
-	}
-}
-
-
-function bubleSort(array) {
-	let mini = stepBuble;
-	for (let i = stepBuble; i < total; i++) {
-		if (bars[mini] >= bars[i]){
-			mini = i;
-		}
-	}
-	fill(0,0,255);
-	rect(mini*barwidth,height,barwidth,-bars[mini]);
-	if(stepBuble >= 0){
-		swap(array,mini,stepBuble);
 	}
 }
 
