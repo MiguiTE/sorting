@@ -43,15 +43,6 @@ function draw() {
 	if (!sorted && bars.length > 0){
 		switch (func) {
 			case "Insertion sort":
-				// for (let i = 1; i < bars.length; i++) {
-				// 	let j = i;
-				// 	while (j > 0 && bars[j-1] > bars[j]) {
-				// 		fill(255,255,0)
-				// 		rect(j*barwidth,height,barwidth,-bars[j]);
-				// 		swap(bars, j, j-1);
-				// 		j--;
-				// 	}
-				// }
 				fill(255,255,0)
 				rect(j*barwidth,height,barwidth,-bars[j]);
 				if (j > 0 && bars[j-1] > bars[j]){
@@ -70,26 +61,6 @@ function draw() {
 		}
 	}
 }
-
-
-// function sorting(){
-// 	if (bars.length > 0){
-// 		switch (func) {
-// 			case "Insertion sort":
-// 				for (let i = 1; i < bars.length; i++) {
-// 					let j = i;
-// 					while (j > 0 && bars[j-1] > bars[j]) {
-// 						fill(255,255,0)
-// 						rect(j*barwidth,height,barwidth,-bars[j]);
-// 						swap(bars, j, j-1);
-// 						j--;
-// 					}
-// 				}
-// 				break;
-// 		}
-// 	}
-// }
-
 function swap(array, i, j) {
 	let tmp = array[i];
 	array[i] = array[j];
