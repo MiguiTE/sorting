@@ -1,7 +1,7 @@
 const total = 100;
 let bars = [];
 let barwidth = 0;
-let sorted = false;
+let sorted = true;
 let generateButton;
 let sortButton;
 let sel;
@@ -27,8 +27,12 @@ function setup() {
 
 	sortButton = createButton("Sort");
 	sortButton.position(250,height + 40)
-	//sortButton.mousePressed();
+	sortButton.mousePressed(() => sorted = false);
 }
+
+let i = 1;
+let j = i
+
 function draw() {
 	background(151)
 	for (let i = 0; i < bars.length; i++) {
@@ -36,8 +40,55 @@ function draw() {
 		fill(0,255,0)
 		rect(i*barwidth,height,barwidth,-altura);
 	}
+	if (!sorted && bars.length > 0){
+		switch (func) {
+			case "Insertion sort":
+				// for (let i = 1; i < bars.length; i++) {
+				// 	let j = i;
+				// 	while (j > 0 && bars[j-1] > bars[j]) {
+				// 		fill(255,255,0)
+				// 		rect(j*barwidth,height,barwidth,-bars[j]);
+				// 		swap(bars, j, j-1);
+				// 		j--;
+				// 	}
+				// }
+				fill(255,255,0)
+				rect(j*barwidth,height,barwidth,-bars[j]);
+				if (j > 0 && bars[j-1] > bars[j]){
+					swap(bars, j, j-1);
+					j--;	
+				}else{
+					i++;
+					j = i;
+				}
+				if ( i == bars.length){
+					sorted = true;
+					i = 1;
+					j = i;
+				}
+				break;
+		}
+	}
 }
 
+
+// function sorting(){
+// 	if (bars.length > 0){
+// 		switch (func) {
+// 			case "Insertion sort":
+// 				for (let i = 1; i < bars.length; i++) {
+// 					let j = i;
+// 					while (j > 0 && bars[j-1] > bars[j]) {
+// 						fill(255,255,0)
+// 						rect(j*barwidth,height,barwidth,-bars[j]);
+// 						swap(bars, j, j-1);
+// 						j--;
+// 					}
+// 				}
+// 				break;
+// 		}
+// 	}
+// }
 
 function swap(array, i, j) {
 	let tmp = array[i];
