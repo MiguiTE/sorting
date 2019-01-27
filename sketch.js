@@ -15,7 +15,7 @@ function setup() {
 
 	generateButton = createButton("Generate");
 	generateButton.position(10,height + 40)
-	generateButton.mousePressed(() => generate());
+	generateButton.mousePressed(generate);
 
 	sel = createSelect();
 	sel.option("Insertion sort");
@@ -37,6 +37,7 @@ function draw() {
 		rect(i*barwidth,height,barwidth,-altura);
 	}
 }
+
 
 function swap(array, i, j) {
 	let tmp = array[i];
