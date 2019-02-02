@@ -1,5 +1,5 @@
 // Some usefull variables
-const total = 100; //total number of bins
+const total = 50; //total number of bins
 let bars = []; //all the bins
 let barwidth = 0; // width of the bins
 let sorted = true; //boolean to check if array is sorted. Set to true because I dont want to sort from the beggining
@@ -82,8 +82,7 @@ function draw() {
 				fill(255,255,0)
 				rect(j*barwidth,height,barwidth,-bars[j]);
 				if (j > 0 && bars[j-1] > bars[j]){
-					//swap
-					bars[j], bars[j-1] = bars[j-1], bars[j]
+					swap(bars,j,j-1)
 					j--;	
 				}else{
 					i++;
@@ -101,7 +100,7 @@ function draw() {
 					rect(newi*barwidth,height,barwidth,-bars[newi]);
 					if(bars[j-1]>bars[j]){
 						//swap
-						bars[j], bars[j-1] = bars[j-1], bars[j]
+						swap(bars,j,j-1)
 						newi=j;
 					}
 					j++;
@@ -123,4 +122,10 @@ function draw() {
 				break;
 		}
 	}
+}
+
+function swap(arr, i, j) {
+	const tmp = arr[i];
+	arr[i] = arr[j];
+	arr[j] = tmp;
 }
