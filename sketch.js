@@ -96,7 +96,7 @@ function draw() {
 				break;
 			case "Bubble sort":
 				if(j<i){
-					fill(255,255,0)
+					fill(255,255,0);
 					rect(newi*barwidth,height,barwidth,-bars[newi]);
 					if(bars[j-1]>bars[j]){
 						//swap
