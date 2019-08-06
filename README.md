@@ -40,7 +40,7 @@ procedure bubbleSort( A : list of sortable items )
 end procedure
 ```
 
-* Merge sort **Top-Down implementation**
+* Merge sort **Top-Down implementation** (not implemented yet)
 
 ```
 function merge_sort(list m)
@@ -88,6 +88,8 @@ function merge(left, right)
         right := rest(right)
     return result
 ```
+
+* Quick sort (not implemented yet)
 
 
 ## What I learned
